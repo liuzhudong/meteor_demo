@@ -138,8 +138,7 @@ body {
   100% {opacity: 0;}
 }
 
-.errors{
-  position: fixed;
+.errorsd  position: fixed;
   z-index: 10000;
   padding: 10px;
   top: 0px;
@@ -157,4 +156,10 @@ body {
   clear: both;
   margin-bottom: 5px;
   pointer-events: auto;
+}
+
+.post-checkbox{
+  display: inline;
+  float: left;
+  padding: 5px;
 }

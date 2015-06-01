@@ -6,14 +6,42 @@
  <div class="container">
     <header class="navbar navbar-default" role="navigation"> 
       <div class="navbar-header">
-        <a class="navbar-brand" href="/">Microscope</a>
+        <a class="navbar-brand" href="/">Myapp</a>
       </div>
     </header>
+    <div id="main">
+      {{> postsList}}
+    </div>
    
+  </div>
+  <div class="get-img">
+  	<button> camera </button>
+  	{{> imgLists}}
   </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="postsList">
+  <div class="posts">
+    {{#each posts}}
+      {{> postItem}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="postItem">
+  <div class="post">
+    <div class="post-content">
+      <input type="checkbox" class="post-checkbox"/>
+      <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+    </div>
+  </div>
+</template>
+
+<template name="imgLists">
+  <div class="view-imgs">
+    {{#each imgs}}
+      <img data-id="{{_id}}" src="{{img}}">
+      <span>{{createdAt}}</span>
+    {{/each}}
+  </div>
 </template>
